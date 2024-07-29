@@ -1,56 +1,9 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-/*=============== VARIABLES CSS ===============*/
-:root {
-  /*========== Colors ==========*/
-  --hue: 45;
-  --sat: 98%;
-  --first-color: hsl(var(--hue), var(--sat), 60%);
-  --first-color-light: hsl(var(--hue), var(--sat), 85%);
-  --first-color-lighten: hsl(var(--hue), var(--sat), 80%);
-  --first-color-alt: hsl(var(--hue), var(--sat), 53%);
-  --title-color: hsl(var(--hue), 4%, 15%);
-  --text-color: hsl(var(--hue), 4%, 35%);
-  --text-color-light: hsl(var(--hue), 4%, 65%);
-  --body-color: hsl(var(--hue), 0%, 100%);
-  --container-color: #FFF;
-  --scroll-bar-color: hsl(var(--hue), 4%, 85%);
-  --scroll-thumb-color: hsl(var(--hue), 4%, 75%);
-  /*========== Font and typography ==========*/
-  --body-font: 'Poppins', sans-serif;
-  --biggest-font-size: 2rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
-  /*========== Font weight ==========*/
-  --font-semi-bold: 600;
-  --font-bold: 700;
-  /*========== Margenes ==========*/
-  --mb-0-5: .5rem;
-  --mb-0-75: .75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-}
 
-@media screen and (min-width: 968px) {
-  :root {
-    --biggest-font-size: 3rem;
-    --h2-font-size: 1.75rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
-  }
-}
-
-/*=============== BASE ===============*/
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -60,108 +13,72 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
-  transition: .5s;
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-h1, h2, h3 {
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
-  line-height: 1.5;
+.footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  color: #fff;
+  transition: 0.5s;
+  padding-bottom: 2rem;
 }
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.container {
+.footer__container {
   max-width: 968px;
-  margin-left: var(--mb-1-5);
-  margin-right: var(--mb-1-5);
-}
-
-.grid {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  row-gap: 2rem;
   display: grid;
   gap: 1.5rem;
 }
 
-/*=============== FOOTER ===============*/
-.footer {
-  background-color: var(--first-color-lighten);
-  padding-bottom: 2rem;
+.footer__title {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
-
-.footer__container {
-  row-gap: 2rem;
-}
-
-.footer__logo, .footer__title {
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-0-75);
-}
-
-.footer__logo {
-  display: inline-block;
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
-}
-
-.footer__description, .footer__link {
-  font-size: var(--small-font-size);
-}
-
-.footer__links {
-  display: grid;
-  row-gap: .5rem;
-}
-
 .footer__link {
-  color: var(--title-color);
+  text-decoration: none;
+  color: darkgray;
+  font-size: 0.813rem;
 }
-
+.footer__links {
+  list-style: none;
+  display: grid;
+  row-gap: 0.5rem;
+}
 .footer__social {
   display: flex;
   column-gap: 1.5rem;
 }
-
-.footer__link:hover{
+.footer__link:hover {
   text-decoration: underline;
-  color: rgb(66, 66, 66);
+  color: rgb(213, 213, 213);
 }
 .footer__social-link {
+  color: white;
   font-size: 1.25rem;
-  color: var(--title-color);
 }
 
 .footer__copy {
   margin-top: 6rem;
   text-align: center;
-  font-size: var(--smaller-font-size);
-  color: var(--text-color);
+  font-size: 0.75rem;
 }
-
-/*=============== MEDIA QUERIES ===============*/
-/* For small devices */
 @media screen and (max-width: 360px) {
-  .section {
+  .footer {
     padding: 3.5rem 0 1rem;
   }
 }
 
-/* For medium devices */
 @media screen and (min-width: 576px) {
   .footer__container {
     grid-template-columns: repeat(4, 1fr);
@@ -169,15 +86,12 @@ img {
 }
 
 @media screen and (min-width: 767px) {
-  body {
+  .footer {
     margin: 0;
-  }
-  .section {
     padding: 6rem 0 2rem;
   }
 }
 
-/* For large devices */
 @media screen and (min-width: 968px) {
   .footer__container {
     grid-template-columns: repeat(4, 1fr);
@@ -191,11 +105,9 @@ img {
 }
 
 @media screen and (min-width: 1024px) {
-  .container {
+  .footer__container {
     margin-left: auto;
     margin-right: auto;
-  }
-  .footer__container {
     column-gap: 3rem;
   }
 }
